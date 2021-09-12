@@ -158,6 +158,11 @@ fieldset{
   display: none;
 }
 
+.tarea{
+    font-weight: bold;
+    overflow-y: scroll;
+}
+
 @media (max-width: 690px) {
   .btn {
     font-size: 1rem;
