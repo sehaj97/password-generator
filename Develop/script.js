@@ -49,7 +49,8 @@
       if(document.querySelector("#specialChars").checked){
         specialChars = " !\"#$%&'()*+,-./:;<=>?@[\\]^_`{|}~";
       }
-      pass = getPassword(numberChars,upperChars,lowerChars,specialChars);
+      pass = getPassword(numberChars,upperChars,lowerChars,specialChars).join('');
+      console.log(pass);
     } else {
       msg.style.display = "block";
       msg.innerText = "Please Select atleast one character type";
@@ -57,29 +58,30 @@
   }
 
   function getPassword(numberChars,upperChars,lowerChars,specialChars){
-     var passwordArray = Array(passwordLengthText.value);
-     var allChars = numberChars + upperChars + lowerChars + specialChars
+     var passwordArray = Array(parseInt(passwordLengthText.value));
+     var allChars = numberChars + upperChars + lowerChars + specialChars;
      passwordArray[0] = allChars;
      for (let i = 1; i < passwordArray.length; i++) {
       if (passwordArray[i-1] === allChars && numberChars != ""){
         passwordArray[i] = numberChars;
-        break;
-      }
-      if (passwordArray[i-1] === numberChars && upperChars != ""){
+      } else if (passwordArray[i-1] === numberChars && upperChars != ""){
         passwordArray[i] = upperChars;
-        break;
-      }
-       if (passwordArray[i-1] === upperChars && lowerChars != ""){
+      } else if (passwordArray[i-1] === upperChars && lowerChars != ""){
          passwordArray[i] = lowerChars;
-         break;
-       }
-       if (passwordArray[i-1] === lowerChars && specialChars != ""){
+       }else if (passwordArray[i-1] === lowerChars && specialChars != ""){
          passwordArray[i] = specialChars;
-         break;
+       } else{
+        passwordArray[i] = allChars;
+
        }
-       passwordArray[i] = allChars;
     }
+    
+    console.log("iam array", passwordArray)
      return passwordArray
+  }
+
+  function randomNumber(initialNumber){
+    return Math.floor(Math.random() * initialNumber);
   }
 
   function generatePassword() {
