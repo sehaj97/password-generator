@@ -72,8 +72,11 @@
          passwordArray[i] = specialChars;
        } else{
         passwordArray[i] = allChars;
-
        }
+    }
+    for (let i = 0; i < passwordArray.length; i++) {
+      stringPosition=randomNumber(passwordArray[i].length);
+      passwordArray[i]=passwordArray[i].substring(stringPosition,stringPosition+1);
     }
     
     console.log("iam array", passwordArray)
