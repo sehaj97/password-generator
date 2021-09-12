@@ -49,16 +49,42 @@
       if(document.querySelector("#specialChars").checked){
         specialChars = " !\"#$%&'()*+,-./:;<=>?@[\\]^_`{|}~";
       }
-      //pass = getPassword(numberChars,upperChars,lowerChars,specialChars);
-
+      pass = getPassword(numberChars,upperChars,lowerChars,specialChars);
     } else {
       msg.style.display = "block";
       msg.innerText = "Please Select atleast one character type";
     }
   }
 
+  function getPassword(numberChars,upperChars,lowerChars,specialChars){
+     var passwordArray = Array(passwordLengthText.value);
+     var allChars = numberChars + upperChars + lowerChars + specialChars
+     passwordArray[0] = allChars;
+     for (let i = 1; i < passwordArray.length; i++) {
+      if (passwordArray[i-1] === allChars && numberChars != ""){
+        passwordArray[i] = numberChars;
+        break;
+      }
+      if (passwordArray[i-1] === numberChars && upperChars != ""){
+        passwordArray[i] = upperChars;
+        break;
+      }
+       if (passwordArray[i-1] === upperChars && lowerChars != ""){
+         passwordArray[i] = lowerChars;
+         break;
+       }
+       if (passwordArray[i-1] === lowerChars && specialChars != ""){
+         passwordArray[i] = specialChars;
+         break;
+       }
+       passwordArray[i] = allChars;
+    }
+     return passwordArray
+  }
+
   function generatePassword() {
-    msg.innerText = pass;
+    msg.innerText = "";
+    msg.style.display = "none";
     passwordLengthBtn.style.display = "block"
     passwordCheckCharBtn.style.display = "none"
     passwordLengthText.value="8"
