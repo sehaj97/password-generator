@@ -162,6 +162,12 @@ fieldset{
     font-weight: bold;
 }
 
+.submit-div{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
 @media (max-width: 690px) {
   .btn {
     font-size: 1rem;
