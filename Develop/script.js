@@ -6,11 +6,14 @@ var generateBtn = document.querySelector("#generate");
 
 // Write password to the #password input
 function writePassword() {
-  var password = generatePassword();
+  var password = '';
+  //generatePassword();
   var passwordText = document.querySelector("#password");
-
+  //display prompts for password
+  var passwordPrompts = document.getElementById("password-prompts");
+  
   passwordText.value = password;
-
+  passwordPrompts.style.display = 'flex';
 }
 
 // Add event listener to generate button
