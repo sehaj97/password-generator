@@ -146,6 +146,14 @@ fieldset{
   margin-top: 20px;
 }
 
+#msg{
+  color: red;
+}
+
+#charTypes{
+  display: none;
+}
+
 @media (max-width: 690px) {
   .btn {
     font-size: 1rem;

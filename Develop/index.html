@@ -25,16 +25,23 @@
             class="tarea"
           ></textarea>
           <form id="password-prompts">
-            
-            <fieldset id="plen">
+            <fieldset>
               <h2>Choose Your Password Criteria</h2>
             </fieldset>
             <fieldset id="plength">
-              <label for="plen"> Length of Password</label>
-              <input type ="Number" id="plen" value="8" min="8" max="128"> 
+              <legend for="plen"> Length of Password</legend>
+              <input type ="text" id="plen" value="8"> 
+            </fieldset>
+            <fieldset id="charTypes">
+              <legend for="cType"> Character Types</legend>           
+                <input type="checkbox" name="lowercase" value="lowercase">Lower Case<br>             
+                <input type="checkbox" name="uppercase" value="uppercase">Upper Case<br>             
+                <input type="checkbox" name="numeric" value="numeric">Numeric<br>
+                <input type="checkbox" name="specialCharacters" value="specialCharacters">Special Characters<br>
             </fieldset>
             <fieldset>
-              <input type="submit" value="Submit Length" id="btnlen">
+              <h4 id="msg"></h4>
+              <button type="button" id="btnlen">NEXT</button>
             </fieldset>
           </form>
         </div>
