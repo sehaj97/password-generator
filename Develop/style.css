@@ -154,6 +154,10 @@ fieldset{
   display: none;
 }
 
+#chkChar {
+  display: none;
+}
+
 @media (max-width: 690px) {
   .btn {
     font-size: 1rem;
