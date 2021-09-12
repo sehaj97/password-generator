@@ -20,10 +20,10 @@ git clone https://github.com/sehaj97/password-generator.git
 
 ## Screenshots
 ### Screenshot when the page first loads
-![Screenshot when the page first loads](assets/images/1.png)
+![Screenshot when the page first loads](assets/images/1.PNG)
 ### Screenshot for click on generate password button
-![Screenshot when the page first loads](assets/images/2.png)
+![Screenshot when the page first loads](assets/images/2.PNG)
 ### Screenshot once length is validated
-![Screenshot when the page first loads](assets/images/3.png)
+![Screenshot when the page first loads](assets/images/3.PNG)
 ### Screenshot once password is genrated
-![Screenshot when the page first loads](assets/images/4.png)
+![Screenshot when the page first loads](assets/images/4.PNG)
