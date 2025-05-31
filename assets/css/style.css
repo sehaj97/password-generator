@@ -13,8 +13,8 @@ body,
 }
 
 body {
-  font-family: sans-serif;
   background-color: #f9fbfd;
+  font-family: sans-serif;
 }
 
 .wrapper {
@@ -24,30 +24,30 @@ body {
 }
 
 header {
-  text-align: center;
   padding: 20px;
   padding-top: 0px;
+  text-align: center;
   color: hsl(206, 17%, 28%);
 }
 
 .card {
+  margin: 0 auto;
+  padding: 30px 40px;
+  max-width: 800px;
   background-color: hsl(0, 0%, 100%);
   border-radius: 5px;
-  border-width: 1px;
+  border-width: 1px; /* This could be part of a border shorthand if other properties were set */
   box-shadow: rgba(0, 0, 0, 0.15) 0px 2px 8px 0px;
   color: hsl(206, 17%, 28%);
   font-size: 18px;
-  margin: 0 auto;
-  max-width: 800px;
-  padding: 30px 40px;
 }
 
 .card-header::after {
   content: " ";
   display: block;
   width: 100%;
-  background: #e7e9eb;
   height: 2px;
+  background: #e7e9eb;
 }
 
 .card-body {
@@ -62,8 +62,8 @@ header {
   content: " ";
   display: block;
   width: 100%;
-  background: #e7e9eb;
   height: 2px;
+  background: #e7e9eb;
 }
 
 .card-footer::after {
@@ -73,109 +73,101 @@ header {
 }
 
 .btn {
-  border: none;
-  background-color: hsl(360, 91%, 36%);
-  border-radius: 25px;
-  box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 6px 0px rgba(0, 0, 0, 0.2) 0px 1px 1px
-    0px;
-  color: hsl(0, 0%, 100%);
   display: inline-block;
-  font-size: 22px;
-  line-height: 22px;
   margin: 16px 16px 16px 20px;
   padding: 14px 34px;
+  background-color: hsl(360, 91%, 36%);
+  border: none;
+  border-radius: 25px;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 6px 0px rgba(0, 0, 0, 0.2) 0px 1px 1px 0px;
+  color: hsl(0, 0%, 100%);
+  font-size: 22px;
+  line-height: 22px;
   text-align: center;
   cursor: pointer;
 }
 
 button[disabled] {
-  cursor: default;
   background: #c0c7cf;
+  cursor: default;
 }
 
-.float-right {
-  float: right;
+/* .float-right class was not found in index.html, removing */
+
+.shared-prompt-style {
+  /* Box Model */
+  display: block; /* Default display, will be overridden by flex for #password-prompts */
+  width: 100%;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  padding-top: 15px;
+  padding-left: 15px;
+  padding-right: 15px;
+  padding-bottom: 85px; /* Large padding bottom, consider if this is for content that appears inside */
+  border: 2px dashed #c0c7cf;
+  border-radius: 6px;
+  /* Typography */
+  font-size: 1.2rem;
+  text-align: center;
+  /* Appearance */
+  appearance: none;
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  /* Other */
+  resize: none;
+  overflow: hidden; /* Consider if this is always desired, might hide content */
 }
 
 #password {
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  appearance: none;
-  border: none;
-  display: block;
-  width: 100%;
-  padding-top: 15px;
-  padding-left: 15px;
-  padding-right: 15px;
-  padding-bottom: 85px;
-  font-size: 1.2rem;
-  text-align: center;
-  margin-top: 10px;
-  margin-bottom: 10px;
-  border: 2px dashed #c0c7cf;
-  border-radius: 6px;
-  resize: none;
-  overflow: hidden;
+  /* display: block; is in .shared-prompt-style */
+  font-weight: bold; /* from .tarea class */
 }
 
-
-#password-prompts{
-  display: none;
+#password-prompts {
+  display: none; /* Initially hidden */
   flex-direction: column;
   align-items: center;
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  appearance: none;
-  border: none;
-  width: 100%;
-  padding-top: 15px;
-  padding-left: 15px;
-  padding-right: 15px;
-  padding-bottom: 85px;
-  font-size: 1.2rem;
-  text-align: center;
-  margin-top: 10px;
-  margin-bottom: 10px;
-  border: 2px dashed #c0c7cf;
-  border-radius: 6px;
-  resize: none;
-  overflow: hidden;
 }
 
-fieldset{
-  margin-top: 20px;
+fieldset {
+  margin-top: 20px; /* Consider if this is needed on all fieldsets or can be more specific */
+  /* Default fieldset styling (like border) is browser-dependent if not overridden */
+  border: none; /* Assuming default fieldset borders are not desired */
+  padding: 0; /* Reset padding if default border is removed */
 }
 
-#msg{
+#msg {
   color: red;
+  font-weight: bold; /* Making error message more prominent */
+  min-height: 1.2em; /* Reserve space to prevent layout shifts */
 }
 
-#charTypes{
-  display: none;
+#charTypes {
+  display: none; /* Initially hidden */
 }
 
 #chkChar {
-  display: none;
+  display: none; /* Initially hidden */
 }
 
-.tarea{
-    font-weight: bold;
-}
+/* .tarea class merged into #password rule as font-weight */
 
-.submit-div{
+.submit-div {
   display: flex;
   flex-direction: column;
   align-items: center;
+  margin-top: 10px; /* Added some margin for separation */
 }
 
+/* Media Queries */
 @media (max-width: 690px) {
   .btn {
-    font-size: 1rem;
     margin: 16px 0px 0px 0px;
     padding: 10px 15px;
+    font-size: 1rem;
   }
 
-  #password {
+  #password { /* This will also apply to .shared-prompt-style due to specificity */
     font-size: 1rem;
   }
 }
