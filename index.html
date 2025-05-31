@@ -22,23 +22,35 @@
             id="password"
             placeholder="Your Secure Password"
             aria-label="Generated Password"
-            class="tarea"
+            class="tarea shared-prompt-style"
           ></textarea>
           <!-- form to handle the prompts -->
-          <form id="password-prompts">
+          <form id="password-prompts" class="shared-prompt-style">
             <fieldset>
               <h2>Choose Your Password Criteria</h2>
             </fieldset>
             <fieldset id="plength">
-              <legend for="plen"> Length of Password</legend>
+              <label for="plen">Length of Password (8-128 characters):</label>
               <input type ="text" id="plen" value="8"> 
             </fieldset>
             <fieldset id="charTypes">
-              <legend for="cType"> Character Types</legend>
-              <input type="checkbox" id="lowercase" class="charCheckbox">Lower Case Characters<br>             
-                <input type="checkbox" id="uppercase" class="charCheckbox">Upper Case Characters<br>             
-                <input type="checkbox" id="numeric" class="charCheckbox">Numeric Characters<br>
-                <input type="checkbox" id="specialChars" class="charCheckbox">Special Characters<br>
+              <legend>Character Types to Include:</legend>
+              <div>
+                <input type="checkbox" id="lowercase" class="charCheckbox">
+                <label for="lowercase">Lower Case Characters</label>
+              </div>
+              <div>
+                <input type="checkbox" id="uppercase" class="charCheckbox">
+                <label for="uppercase">Upper Case Characters</label>
+              </div>
+              <div>
+                <input type="checkbox" id="numeric" class="charCheckbox">
+                <label for="numeric">Numeric Characters</label>
+              </div>
+              <div>
+                <input type="checkbox" id="specialChars" class="charCheckbox">
+                <label for="specialChars">Special Characters</label>
+              </div>
             </fieldset>
             <fieldset class="submit-div">
               <h4 id="msg"></h4>
